@@ -66,8 +66,6 @@ python manage.py runserver
 
 Open your browser and navigate to http://127.0.0.1:8000/.
 
-
-
 API Endpoints
 Authentication
 Signup: POST /api/register/
@@ -106,10 +104,13 @@ List Friends: GET /api/friends/
 
 Response: 200 OK with a list of friends.
 
-
 List Pending Friend Requests: GET /api/friend-request/pending/
 
 Response: 200 OK with a list of pending friend requests.
+
+Post_API_Collection
+
+URL: https://documenter.getpostman.com/view/37846553/2sAXjM4sAi
 
 
 
