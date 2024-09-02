@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "68d55a64-716b-410a-96b0-0cbff4e99aff",
+		"name": "Socialnet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37846553"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\":\"hat\",\r\n    \"last_name\":\"S\",\r\n    \"email\":\"hat@gmail.com\",\r\n    \"password\":\"hat123\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/register/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login_token_generation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"dog@gmail.com\",\r\n    \"password\":\"dog123\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/token/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NDg0NTc2LCJpYXQiOjE3MjUxODg1NzYsImp0aSI6IjQ3NWJkYzZkNWNlYjRkMTNiYTM2MGFhMzRmOGY3MjViIiwidXNlcl9pZCI6Nn0.IspYFDxmK_-RSbZy6NG6Hh9Ckc3oeX9tqZVSF-LPNUM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/search-users/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"search-users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send_request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NDg1Mjg2LCJpYXQiOjE3MjUxODkyODYsImp0aSI6IjUwN2RhOTEwMGY5MzQ3MTk4NmY0YjU3ZWQ1ZmU0ZmI2IiwidXNlcl9pZCI6Nn0.EZbqoG193M8EKSE6qd5LcVdRzXzC4pL_qJM_NdTXwUA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"to_user\":5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/friend-request/send/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"friend-request",
+						"send",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept_request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NDg2MzIyLCJpYXQiOjE3MjUxOTAzMjIsImp0aSI6ImYzNGIxNDlkYzViZTQ4Njc5NmEwY2YyNGZkOGU4YmI2IiwidXNlcl9pZCI6Mn0.EIG9tNoNnqWjBIM3KHnIb5JSDW3EZN-JXy8qHV28aIY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/friend-request/accept/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"friend-request",
+						"accept",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject_request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NDg2NTM4LCJpYXQiOjE3MjUxOTA1MzgsImp0aSI6IjMyMzg3OTU5ZDNmNTQxZjlhNTEwYzcyNGQ4NWJkMDEyIiwidXNlcl9pZCI6M30.pfCq7OuThS7yZrxZQPrj4kGVINWkkjS2Ox-AmIuhPGQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/friend-request/reject/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"friend-request",
+						"reject",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_friendslist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NDg2NTM4LCJpYXQiOjE3MjUxOTA1MzgsImp0aSI6IjMyMzg3OTU5ZDNmNTQxZjlhNTEwYzcyNGQ4NWJkMDEyIiwidXNlcl9pZCI6M30.pfCq7OuThS7yZrxZQPrj4kGVINWkkjS2Ox-AmIuhPGQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/friends/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"friends",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pending_request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2NDg3MzkwLCJpYXQiOjE3MjUxOTEzOTAsImp0aSI6ImIzY2NlNTllMTFiZjQ3YmE4ZDNiZWMxN2IxYjUwMWY2IiwidXNlcl9pZCI6N30.oAZuM_xg36rVObJlvCMX_Wj_liKzPqvnZS_j9Fpyd-k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/friend-request/pending/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"friend-request",
+						"pending",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
